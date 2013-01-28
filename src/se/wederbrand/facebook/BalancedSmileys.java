@@ -70,11 +70,11 @@ public class BalancedSmileys {
 				// if ] split and decrease on one but not the other and check rest.
 				return isBalancedRecursive(chars, index+1, count)
 						|| isBalancedRecursive(chars, index+1, count-1);
-			case 'X':
+//			case 'X':
 				// if X increase with 1, decrease with 1 or leave as it is
-				return isBalancedRecursive(chars, index+1, count)
-						|| isBalancedRecursive(chars, index+1, count+1)
-						|| isBalancedRecursive(chars, index+1, count-1);
+	//			return isBalancedRecursive(chars, index+1, count)
+		//				|| isBalancedRecursive(chars, index+1, count+1)
+			//			|| isBalancedRecursive(chars, index+1, count-1);
 			default:
 				throw new RuntimeException("unheard of character: " + current);
 		}
@@ -86,7 +86,7 @@ public class BalancedSmileys {
 	 */
 	public static String cleanUp(String str) {
 		String orig = str;
-		str = str.replaceAll("\\(:\\)", "X");
+		// str = str.replaceAll("\\(:\\)", "X");
 		str = str.replaceAll(":\\)", "]");
 		str = str.replaceAll(":\\(", "[");
 		str = str.replaceAll("[^\\(\\)\\]\\[X]", "");
